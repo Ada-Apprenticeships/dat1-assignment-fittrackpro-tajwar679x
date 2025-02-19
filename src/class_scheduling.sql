@@ -2,9 +2,6 @@
 .open fittrackpro.sqlite
 .mode column
 
--- Enable foreign key support
-
--- Class Scheduling Queries
 
 -- 1. List all classes with their instructors
 -- TODO: Write a query to list all classes with their instructors
