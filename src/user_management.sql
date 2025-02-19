@@ -31,6 +31,18 @@ GROUP BY m.member_id --Recap GROUP BY
 ORDER BY registration_count ASC
 LIMIT 1;
 
+-- 6. Calculate the percentage of members who have attended at least one class
+SELECT ROUND(
+    100.0 * COUNT(DISTINCT CASE WHEN ca.attendance_status = 'Attended' THEN m.member_id END) / COUNT(DISTINCT m.member_id),
+    2
+) AS percentage_attended
+FROM members m
+LEFT JOIN class_attendance ca ON m.member_id = ca.member_id;
+
+-- Enable foreign key support
+
+-- User Management Queries
+
 -- 1. Retrieve all members
 -- TODO: Write a query to retrieve all members
 
